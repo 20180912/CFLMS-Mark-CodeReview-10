@@ -4,15 +4,19 @@
 require_once 'db_connect.php';
 
 if ($_POST) {
+    $title = $_POST['title'];
     $image = $_POST['image'];
-    $name = $_POST['name'];
-    $ingredients = $_POST['ingredients'];
-    $price = $_POST['price'];
-    $allergens = $_POST['allergens'];
+    $authorID = $_POST['authorID'];
+    $ISBN = $_POST['ISBN'];
+    $short_description = $_POST['short_description'];
+    $publish_date = $_POST['publish_date'];
+    $publisherID = $_POST['publisherID'];
+    $type = $_POST['type'];
+    $status = $_POST['status'];
 
    $id = $_POST['id'];
 
-   $sql = "UPDATE meals SET image = '$image', name = '$name', ingredients = '$ingredients', price = '$price', allergens = '$allergens' WHERE mealID = {$id}" ;
+   $sql = "UPDATE media SET title='$title', image='$image', authorID=$authorID, ISBN=$ISBN, short_description='$short_description', publish_date='$publish_date', publisherID=$publisherID, type='$type', status='$status' WHERE mediaID = {$id}" ;
    if($connect->query($sql) === TRUE) {
        echo  "<p>Successfully Updated</p>";
        echo "<a href='../update.php?id=" .$id."'><button type='button'>Back</button></a>";

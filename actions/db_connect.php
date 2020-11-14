@@ -3,10 +3,10 @@
 $localhost = "127.0.0.1";
 $username = "root";
 $password = "";
-$dbname = "meals";
+$dbname = "cr10-mark-biglibrary";
 
 // create connection
-$connect = new  mysqli($localhost, $username, $password, $dbname);
+$connect = new mysqli($localhost, $username, $password, $dbname);
 
 // check connection
 if($connect->connect_error) {
