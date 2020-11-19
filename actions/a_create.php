@@ -4,10 +4,12 @@ require_once 'db_connect.php';
 
 if ($_POST) {
     $title = $_POST['title'];
+    $title = mysqli_real_escape_string($connect, $title);
     $image = $_POST['image'];
     $authorID = $_POST['authorID'];
     $ISBN = $_POST['ISBN'];
     $short_description = $_POST['short_description'];
+    $short_description = mysqli_real_escape_string($connect, $short_description);
     $publish_date = $_POST['publish_date'];
     $publisherID = $_POST['publisherID'];
     $type = $_POST['type'];
